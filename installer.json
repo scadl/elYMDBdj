@@ -1,0 +1,9 @@
+{
+  "dest": "elYMDBdj-setup-win32-x64/",
+  "icon": "djYMDB/static/favicon.ico",
+  "name": "elYMDBdj",
+  "productName": "YMDB (next)"
+  "tags": [
+    "Utility"
+  ]
+}

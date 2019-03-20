@@ -1,0 +1,27 @@
+{
+    "name": "elYMDBdj",
+    "version": "1.0.0",
+    "description": "Your Movie DataBase (Provider)",
+    "main": "main.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "electron . --enable-transparent-visuals",
+        "build": "electron-packager . --overwrite --icon=res/app_icon.ico --ignore=.idea --out=dist/",
+        "setup": "electron-installer-windows --src dist/elYMDBdj-win32-x64/ --dest dist/elYMDBdj-setup-win32-x64/ --icon res/setup_icon.ico --animation res/logo_animated.gif --productName Your_Movie_DataBase --noMsi"
+    },
+    "author": "scadl",
+    "license": "MIT",
+    "devDependencies": {
+        "electron": "^3.0.9",
+        "electron-packager": "^12.2.0",
+        "electron-prebuilt": "^1.4.13"
+    },
+    "dependencies": {
+        "bootstrap": "^4.1.3",
+        "electron-installer-windows": "^1.1.0",
+        "font-awesome": "^4.7.0",
+        "jquery": "^3.3.1",
+        "popper.js": "^1.14.6",
+        "tasklist": "^3.1.1"
+    }
+}
