@@ -36,9 +36,11 @@
          win.loadURL('file://' + __dirname + '/src/myLoaderView.html');
          win.show();
 
+         var port = 9183;
+
         // This twisted CWD argument is required to correctly drive django's Model.ImageFile path
          var djangoSpawn = require('child_process').spawn;
-         var djangoWin = djangoSpawn(__dirname+'/djYMDB/venv/Scripts/python', ['-u', __dirname+'/djYMDB/manage.py', 'runserver'], {cwd:__dirname+'/djYMDB'});
+         var djangoWin = djangoSpawn(__dirname+'/djYMDB/venv/Scripts/python', ['-u', __dirname+'/djYMDB/manage.py', 'runserver', 'localhost:'+port], {cwd:__dirname+'/djYMDB'});
          djangoWin.stdout.on('data', function (data) {
              console.log(data.toString());
          });
@@ -48,17 +50,17 @@
          const trayMeu = Menu.buildFromTemplate([
              {label:'Добавить запись', type:"normal", click:function () {
                      win.restore();
-                     win.loadURL('http://localhost:8000/add/0');
+                     win.loadURL('http://localhost:'+port+'/add/0');
                      win.show();
                  }},
              {label:'Изменить колллекции', type:"normal", click:function () {
                      win.restore();
-                     win.loadURL('http://localhost:8000/prop/1');
+                     win.loadURL('http://localhost:'+port+'/prop/1');
                      win.show();
                  }},
              {label:'Изменить жанры', type:"normal", click:function () {
                      win.restore();
-                     win.loadURL('http://localhost:8000/prop/2');
+                     win.loadURL('http://localhost:'+port+'/prop/2');
                      win.show();
                  }},
              {label:'sep', type:"separator"},
