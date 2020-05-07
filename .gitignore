@@ -26,3 +26,4 @@ djYMDB/
 # Boss dependency manager vendor folder https://github.com/HashLoad/boss
 modules/
 !/djYMDB/
+djYMDB/secret_key.txt
